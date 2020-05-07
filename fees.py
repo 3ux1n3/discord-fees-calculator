@@ -21,7 +21,7 @@ def ebay(n):
 
 
 def goat(n):
-    return (0.029 * n) + 0.3
+    return 0.095 * n + paypal(n - 0.095*n)
 
 
 def stockx(n):

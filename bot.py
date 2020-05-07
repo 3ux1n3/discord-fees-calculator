@@ -20,7 +20,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.lower().startswith('!fees '):
         try:
-            amount = int(message.content.lower().replace('!fees ', ''))
+            amount = float(message.content.lower().replace('!fees ', ''))
             _fees = get_fees(amount)
             embed = discord.Embed(title="Fees")
             for i in _fees.keys():
@@ -31,7 +31,7 @@ async def on_message(message):
             await message.channel.send("invalid input")
     elif message.content.lower().startswith('!payouts '):
         try:
-            amount = int(message.content.lower().replace('!payouts ', ''))
+            amount = float(message.content.lower().replace('!payouts ', ''))
             _fees = get_fees(amount)
             embed = discord.Embed(title="Payouts")
             for i in _fees.keys():
